@@ -1,0 +1,12 @@
+<mat-grid-list cols="1" *ngIf="!heroe; else divheroe">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<ng-template #divheroe>
+    <div>Hola Mundo</div>
+</ng-template>
+
+
