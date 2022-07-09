@@ -6,7 +6,38 @@
 
 
 <ng-template #divheroe>
-    <div>Hola Mundo</div>
+    <div 
+    fxLayout="row"
+    fxLayout="colum"
+    fxLayoutGap="30px"
+    >
+    <div fxFlex="50">
+        <h1> {{heroe.superhero}} <small> - {{heroe.alter_ego }}</small></h1>
+        <mat-divider> </mat-divider>
+        <br>
+        <img [src]="heroe | imagen">
+    </div>
+    
+    <div fxFlex="50">
+        <h1>{{heroe.publisher}}</h1>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-list>
+            <mat-list-item>Primera aparicion: {{heroe.first_appearance}}</mat-list-item>
+            <mat-list-item>Personajes: {{heroe.characters}}</mat-list-item>
+            <mat-list-item>Publicador: {{heroe.publisher}}</mat-list-item>
+            <mat-list-item>Alter Ego: {{heroe.alter_ego}}</mat-list-item>
+            <mat-list-item>Super Heroe: {{heroe.superhero}}</mat-list-item>
+
+        </mat-list>
+        <br>
+            <button mat-button color="warn" 
+                 (click)="regresar()">Regresar
+            </button>
+    </div>
+
+
+    </div>
 </ng-template>
 
 

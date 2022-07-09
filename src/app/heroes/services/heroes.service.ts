@@ -18,9 +18,9 @@ export class HeroesService {
   
   }
 
-  getHeroePorId(id:string):Observable<Heroe[]>{
+  getHeroePorId(id:string):Observable<Heroe>{
 
-    return this.http.get<Heroe[]>(`${this.urlApp}/${id}`) 
+    return this.http.get<Heroe>(`${this.urlApp}/${id}`) 
   
   }
 

@@ -6,15 +6,6 @@ import { Heroe } from '../../interfaces/heroe.interface';
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styles: [ `
-      div mat-card{
-        margin-bottom:15px;
-      }
-
-      mat-card{
-          margin-top:20px;
-          
-
-      }
     `
   ]
 })
