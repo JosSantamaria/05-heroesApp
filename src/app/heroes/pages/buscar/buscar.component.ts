@@ -28,13 +28,13 @@ export class BuscarComponent implements OnInit {
 
   opcionSeleccionada(event:MatAutocompleteSelectedEvent)
   {
+    //validar si es un string vacio
     if( !event.option.value)
     {
       this.heroeSeleccionado = undefined;
       return;
     }
 
-    //validar si es un string vacio
     const heroe:Heroe = event.option.value;
     this.termino = heroe.superhero;
 
