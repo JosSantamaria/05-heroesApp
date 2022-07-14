@@ -12,19 +12,19 @@ export class HeroesService {
   constructor(private http: HttpClient) { }
   //variable con la ip del json-server
   //private urlApp:string = 'http://localhost:3000/heroes';
-  //environment varable
+  //environment variable
   private baseUrl:string = environment.baseUrl
 
   getHeroes():Observable<Heroe[]>{
 
     return this.http.get<Heroe[]>(`${this.baseUrl}/heroes`); // aplicamos una peticion get a la (url) de esta clase
-  
+
   }
 
   getHeroePorId(id:string):Observable<Heroe>{
 
     return this.http.get<Heroe>(`${this.baseUrl}/heroes/${id}`) ;
-  
+
   }
 
   getSugerencias( termino:string ):Observable<Heroe[]>{
@@ -37,6 +37,6 @@ export class HeroesService {
   // editHeroePorId(id:string):Observable<Heroe[]>{
 
   //   return this.http.get<Heroe[]>(`${this.baseUrl}/editar/${id}`);
-  
+
   // }
 }
