@@ -21,11 +21,15 @@ export class LoginComponent  {
     //tener usuario
     this.authService.login()
     .subscribe( resp => {
-      console.log(resp)
+      console.log(resp);
+
+        if(resp.id){
+            this.router.navigate(['./heroes']);
+        }
     })
 
     //Hacer la navegacion
-    // this.router.navigate(['./heroes']);
+     //this.router.navigate(['./heroes']);
 
   }
 

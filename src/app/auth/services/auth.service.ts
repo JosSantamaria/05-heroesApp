@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../../../environments/environment';
+import { Auth } from '../interfaces/auth.interface';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +10,20 @@ import { environment } from './../../../environments/environment';
 export class AuthService {
 
   private baseUrl : string = environment.baseUrl;
+  private _auth:Auth | undefined;
+
+  get auth():Auth{
+    return {...this._auth! }
+  }
+
 
   constructor(private http:HttpClient) { }
 
   login(){
-    return this.http.get(`${this.baseUrl}/usuarios/1`);
+    return this.http.get<Auth>(`${this.baseUrl}/usuarios/1`)
+    .pipe(//Se aplica el pipe tap(se intercepta la resp del backend)
+      tap( auth => this._auth = auth )
+      );
   }
 
 }
