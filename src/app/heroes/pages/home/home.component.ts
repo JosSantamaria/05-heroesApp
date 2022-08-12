@@ -15,6 +15,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class HomeComponent {
 
+
   get auth(){
     return this.authService.auth;
   }
