@@ -8,7 +8,7 @@ import { Heroe } from '../interfaces/heroe.interface';
 export class ImagenPipe implements PipeTransform {
 
   transform( heroe:Heroe ): string {
-    console.log('Pipe imagen procesado');
+    // console.log('Pipe imagen procesado');
 
     if (!heroe.id && !heroe.alt_img )
     //Añadimos excepcion en caso de no tener un heroe.id (Al editar por ejemplo)

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map,tap } from 'rxjs/operators';
 import { environment } from './../../../environments/environment';
 
@@ -22,15 +22,16 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  verificaAutenticacion(): Observable<boolean> | boolean{
+  verificaAutenticacion(): Observable<boolean>
+  {
     if( !localStorage.getItem('token') ){
-      return false;
+      return of(false); //of() convierte un booleano en un obsevable
     }
 
     return this.http.get<Auth>(`${this.baseUrl}/usuarios/1`)
         .pipe(
             map( auth => {
-              console.log('map',auth);
+              this._auth = auth;
               return true;
             })
         );
