@@ -1,7 +1,7 @@
 import { HeroesService } from './../../services/heroes.service';
 import { Component, OnInit } from '@angular/core';
 import { Heroe } from '../../interfaces/heroe.interface';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { MatLegacyAutocompleteSelectedEvent as MatAutocompleteSelectedEvent } from '@angular/material/legacy-autocomplete';
 
 @Component({
   selector: 'app-buscar',

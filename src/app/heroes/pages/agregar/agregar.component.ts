@@ -5,8 +5,8 @@ import { switchMap } from 'rxjs/operators';
 
 import { Publisher, Heroe } from './../../interfaces/heroe.interface';
 import { HeroesService } from './../../services/heroes.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 
 
 @Component({
